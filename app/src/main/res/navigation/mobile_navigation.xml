@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/calculoFragment3"
+        android:name="com.vitoria.firstapp.view.CalculoFragment"
+        android:label="fragment_calculo"
+        tools:layout="@layout/fragment_calculo" />
+    <fragment
+        android:id="@+id/verificarFragment2"
+        android:name="com.vitoria.firstapp.view.VerificarFragment"
+        android:label="fragment_verificar"
+        tools:layout="@layout/fragment_verificar" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.vitoria.firstapp.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+</navigation>
