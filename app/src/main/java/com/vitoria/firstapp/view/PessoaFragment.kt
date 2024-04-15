@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import com.vitoria.firstapp.databinding.FragmentCalculoBinding
+import androidx.navigation.fragment.findNavController
+import com.vitoria.firstapp.databinding.FragmentPessoaBinding
 import com.vitoria.firstapp.service.model.Pessoa
 import com.vitoria.firstapp.viewmodel.PessoaViewModel
 import java.time.LocalDateTime
@@ -15,14 +16,14 @@ import java.time.LocalDateTime
 class PessoaFragment : Fragment() {
     private  val viewModel: PessoaViewModel by viewModels()
 
-    private var _binding: FragmentCalculoBinding? = null
-    private  val binding: FragmentCalculoBinding get() = _binding!!
+    private var _binding: FragmentPessoaBinding? = null
+    private  val binding: FragmentPessoaBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentCalculoBinding.inflate(inflater, container, false)
+        _binding = FragmentPessoaBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -30,26 +31,43 @@ class PessoaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnEnviar.setOnClickListener {
-            var nome = binding.edtName.editableText.toString()
-            var anoNascimento = binding.edtAnoNascimento.editableText.toString()
+            val nome = binding.edtName.editableText.toString()
+            val anoNascimento = binding.edtAnoNascimento.editableText.toString()
+            val sexo = binding.edtSexo.editableText.toString()
+            var faixaEtaria = ""
+
 
             if(nome != "" && anoNascimento != ""){
-                binding.tvName.text = "Nome: " + nome
 
-                var anoAtual = LocalDateTime.now().year
-                var idade = anoAtual - anoNascimento.toInt()
 
-                binding.tvIdade.text = "Idade: ${idade}"
+                val anoAtual = LocalDateTime.now().year
+                val idade = anoAtual - anoNascimento.toInt()
+
+
+                if (idade < 12){
+                    faixaEtaria = "Criança"
+                }else if(idade < 18){
+                    faixaEtaria = "Adolescente"
+                }else if(idade < 65){
+                    faixaEtaria = "Adulto"
+                }else{
+                    faixaEtaria = "Idoso"
+                }
+
 
                 val pessoa = Pessoa (
                     nome = nome,
-                    idade = idade
+                    idade = idade,
+                    sexo = sexo,
+                    faixaEtaria = faixaEtaria
                 )
 
                 viewModel.insert(pessoa)
 
                 binding.edtName.editableText.clear()
                 binding.edtAnoNascimento.editableText.clear()
+                findNavController().navigateUp()
+
             }else {
                 Toast.makeText(requireContext(), "Digite os dados", Toast.LENGTH_LONG).show()
             }

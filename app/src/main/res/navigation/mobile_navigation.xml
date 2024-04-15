@@ -6,19 +6,28 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/calculoFragment3"
-        android:name="com.vitoria.firstapp.view.PessoaFragment"
-        android:label="fragment_calculo"
-        tools:layout="@layout/fragment_calculo" />
+        android:id="@+id/homeFragment"
+        android:name="com.vitoria.firstapp.view.HomeFragment"
+        android:label="First App"
+        tools:layout="@layout/fragment_home" />
+
     <fragment
         android:id="@+id/verificarFragment2"
         android:name="com.vitoria.firstapp.view.VerificarFragment"
         android:label="fragment_verificar"
         tools:layout="@layout/fragment_verificar" />
+
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.vitoria.firstapp.view.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/pessoaFragment"
+        android:name="com.vitoria.firstapp.view.PessoaFragment"
+        android:label="Pessoa"
+        tools:layout="@layout/fragment_pessoa" />
+
+
+    <fragment
+        android:id="@+id/allPessoasFragment"
+        android:name="com.vitoria.firstapp.view.AllPessoasFragment"
+        android:label="Pessoas"
+        tools:layout="@layout/fragment_all_pessoas" />
 
 </navigation>

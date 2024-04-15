@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.VerificarFragment">
 
-
     <TextView
         android:id="@+id/tvTelefone"
         android:layout_width="match_parent"

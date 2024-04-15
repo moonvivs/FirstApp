@@ -7,40 +7,34 @@
     android:orientation="vertical">
 
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nome:"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/tvIdade"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Idade:"
-        android:textSize="24sp" />
-
-
     <EditText
         android:id="@+id/edtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite seu nome:" />
+        android:hint="Digite seu nome:"
+        android:layout_margin="10dp"/>
 
     <EditText
         android:id="@+id/edtAnoNascimento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Digite sua ano de nascimento:"
-        android:inputType="number" />
+        android:inputType="number"
+        android:layout_margin="10dp" />
+
+    <EditText
+        android:id="@+id/edtSexo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite seu Sexo:"
+        android:inputType="text"
+        android:layout_margin="10dp" />
 
     <Button
         android:id="@+id/btnEnviar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
+        android:layout_gravity="center"
         android:text="Enviar"
         android:textStyle="bold" />
 

@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.vitoria.firstapp.R
-import com.vitoria.firstapp.databinding.FragmentCalculoBinding
 import com.vitoria.firstapp.databinding.FragmentVerificarBinding
 
 
